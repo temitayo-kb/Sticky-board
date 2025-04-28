@@ -1,3 +1,4 @@
+/*
 .App {
   text-align: center;
 }
@@ -34,5 +35,89 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+*/
+
+/* Hi! This CSS styles the app to look clean and minimalistic. */
+/* I'm using simple rules to make the board and notes look nice. */
+/* It’s responsive so it works on phones too. */
+
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.board {
+  position: relative;
+  min-height: 80vh;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.add-button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+
+.sticky-note {
+  position: absolute;
+  padding: 10px;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  max-width: 300px;
+  resize: both;
+  overflow: auto;
+}
+
+.sticky-note textarea {
+  width: 100%;
+  height: 100px;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 16px;
+}
+
+.note-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.color-button,
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.color-picker {
+  position: absolute;
+  z-index: 10;
+}
+
+@media (max-width: 600px) {
+  .sticky-note {
+    min-width: 120px;
+    max-width: 200px;
+  }
+
+  .add-button {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
