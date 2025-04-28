@@ -1,13 +1,14 @@
-// This StickyNote component shows one sticky note.
+// Hey! This StickyNote component shows one sticky note.
 // It lets you drag, edit text, change color, and delete the note.
-// I used react-draggable for dragging and react-color for the color picker.
+// I used react-draggable with a ref to make it work with React 18.
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Draggable from "react-draggable";
 import { ChromePicker } from "react-color";
 
 function StickyNote({ note, onUpdate, onDelete }) {
   const [showColorPicker, setShowColorPicker] = useState(false);
+  const nodeRef = useRef(null); // This helps Draggable work without findDOMNode.
 
   // This updates the note's text when you type.
   const handleTextChange = (e) => {
@@ -25,8 +26,16 @@ function StickyNote({ note, onUpdate, onDelete }) {
   };
 
   return (
-    <Draggable defaultPosition={note.position} onStop={handleDrag}>
-      <div className="sticky-note" style={{ backgroundColor: note.color }}>
+    <Draggable
+      nodeRef={nodeRef} // Pass the ref to Draggable.
+      defaultPosition={note.position}
+      onStop={handleDrag}
+    >
+      <div
+        ref={nodeRef} // Attach the ref to the DOM element.
+        className="sticky-note"
+        style={{ backgroundColor: note.color }}
+      >
         <textarea
           value={note.text}
           onChange={handleTextChange}

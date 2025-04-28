@@ -29,14 +29,17 @@
 
 import React from "react";
 import Board from "./Board";
+import ErrorBoundary from "./ErrorBoundary";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>My Sticky Board</h1>
-      <Board />
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <h1>My Sticky Board</h1>
+        <Board />
+      </div>
+    </ErrorBoundary>
   );
 }
 
