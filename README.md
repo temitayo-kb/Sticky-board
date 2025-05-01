@@ -2,11 +2,6 @@
 
 A simple React-based bulletin board where you can create, edit, drag, and delete sticky notes with customizable colors.
 
-## Setup Instructions
+## Screenshot
 
-1. **Install Node.js**: Download and install the LTS version from [nodejs.org](https://nodejs.org).
-2. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/sticky-board.git
-   cd sticky-board
-   ```
+![Sticky board screenshot](https://raw.githubusercontent.com/temitayo-kb/Sticky-board/e433c154ec3d76ee85ca07aaa233e86b9f216c5a/assets/screenshot.png)
