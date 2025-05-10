@@ -1,4 +1,4 @@
-// Hey! This StickyNote component shows one sticky note.
+// This StickyNote component shows one sticky note.
 // It lets you drag, edit text, change color, and delete the note.
 // I used react-draggable with a ref to make it work with React 18.
 
